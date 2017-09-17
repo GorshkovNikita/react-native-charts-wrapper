@@ -128,6 +128,10 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
 
         Description description = new Description();
 
+
+        if (BridgeUtils.validate(propMap, ReadableType.Boolean, "enabled")) {
+            description.setEnabled(propMap.getBoolean("enabled"));
+        }
         if (BridgeUtils.validate(propMap, ReadableType.String, "text")) {
             description.setText(propMap.getString("text"));
         }
@@ -136,6 +140,12 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
         }
         if (BridgeUtils.validate(propMap, ReadableType.Number, "textSize")) {
             description.setTextSize((float) propMap.getDouble("textSize"));
+        }
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "xOffset")) {
+            description.setXOffset((float) propMap.getDouble("xOffset"));
+        }
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "yOffset")) {
+            description.setXOffset((float) propMap.getDouble("yOffset"));
         }
         if (BridgeUtils.validate(propMap, ReadableType.Number, "positionX") &&
                 BridgeUtils.validate(propMap, ReadableType.Number, "positionY")) {
@@ -281,6 +291,12 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
         }
         if (BridgeUtils.validate(propMap, ReadableType.Number, "axisLineWidth")) {
             axis.setAxisLineWidth((float) propMap.getDouble("axisLineWidth"));
+        }
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "xOffset")) {
+            axis.setXOffset((float) propMap.getDouble("xOffset"));
+        }
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "yOffset")) {
+            axis.setYOffset((float) propMap.getDouble("yOffset"));
         }
         if (BridgeUtils.validate(propMap, ReadableType.Map, "gridDashedLine")) {
             ReadableMap gridDashedLine = propMap.getMap("gridDashedLine");
