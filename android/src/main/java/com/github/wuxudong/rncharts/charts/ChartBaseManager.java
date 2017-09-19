@@ -394,6 +394,7 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
      */
     @ReactProp(name = "data")
     public void setData(Chart chart, ReadableMap propMap) {
+        chart.clear();
         chart.setData(getDataExtract().extract(propMap));
         chart.invalidate();
     }
